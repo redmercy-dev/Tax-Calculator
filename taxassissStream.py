@@ -41,7 +41,7 @@ def main():
     if 'global_agent' not in st.session_state:
         st.session_state.global_agent = None
 
-    @st.cache_data()
+    @st.cache_resource
     def initialize_agent(file_path):
         return OpenAIAssistantAgent.from_new(
             name="Tax Provider",
